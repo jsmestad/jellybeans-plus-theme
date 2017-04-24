@@ -1,6 +1,7 @@
 # jellybeans-plus-theme
 An emacs replica of nanotech/jellybeans.vim for emacs
 
+See the [wiki](https://github.com/jsmestad/jellybeans-plus-theme/wiki) for information on modifying Emacs built-in `ruby-mode` to highlight symbols and `self` correctly.
 
 ## Spacemacs install
 
