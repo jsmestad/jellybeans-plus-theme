@@ -2,7 +2,7 @@
 
 ;; Author: Justin Smestad <justin.smestad@gmail.com>
 ;; URL: https://github.com/jsmestad/jellybeans-plus-theme
-;; Version: 0.1.0
+;; Version: 0.1.1
 
 ;; Inspired by nanotech/jellybeans
 ;; 2017/04/23 - Modified to match nanotech/jellybeans.vim as rendered by MacVim
@@ -43,9 +43,25 @@
 
       (custom-theme-set-faces
        'jellybeans-plus
+       ;; Defaults
        `(default ((,class (:foreground ,jellybeans-plus-fg :background ,jellybeans-plus-bg))))
+       `(font-lock-builtin-face ((,class (:foreground ,jellybeans-plus-blue-0))))
+       `(font-lock-comment-face ((,class (:slant normal :foreground ,jellybeans-plus-grey-0))))
+       `(font-lock-constant-face ((,class (:foreground ,jellybeans-plus-green-1))))
+       `(font-lock-doc-face ((,class (:foreground ,jellybeans-plus-green-0))))
+       `(font-lock-function-name-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
+       `(font-lock-keyword-face ((,class (:foreground ,jellybeans-plus-purple-0))))
+       `(font-lock-preprocessor-face ((,class (:foreground ,jellybeans-plus-hspragma))))
+       `(font-lock-string-face ((,class (:foreground ,jellybeans-plus-green-0))))
+       `(font-lock-type-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
+       `(font-lock-variable-name-face ((,class (:foreground ,jellybeans-plus-cyan)))) ;; hs operators color
+       `(font-lock-warning-face ((,class (:foreground ,jellybeans-plus-red-1))))
+       `(font-lock-regexp-grouping-construct ((t (:foreground ,jellybeans-plus-yellow-0 :bold t))))
+       `(font-lock-regexp-grouping-backslash ((t (:foreground ,jellybeans-plus-red-0 :bold t))))
+       ;; Alchemist
        `(alchemist-test--failed-face ((,class (:foreground ,jellybeans-plus-red-0))))
        `(alchemist-test--success-face ((,class (:foreground ,jellybeans-plus-green-0))))
+       ;; Company
        `(company-preview-common ((,class (:foreground nil :background ,jellybeans-plus-purple-1))))
        `(company-scrollbar-bg ((,class (:background ,jellybeans-plus-grey-2))))
        `(company-scrollbar-fg ((,class (:background ,jellybeans-plus-grey-0))))
@@ -53,6 +69,7 @@
        `(company-tooltip-common ((,class (:foreground ,jellybeans-plus-red-0 :background ,jellybeans-plus-grey-2))))
        `(company-tooltip-common-selection ((,class (:foreground ,jellybeans-plus-red-0 :background ,jellybeans-plus-purple-1))))
        `(company-tooltip-selection ((,class (:background ,jellybeans-plus-purple-1))))
+       ;; Compilation
        `(compilation-error ((,class (:foreground ,jellybeans-plus-red-0))))
        `(compilation-info ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(compilation-line-number ((,class (:foreground ,jellybeans-plus-grey-0))))
@@ -60,6 +77,7 @@
        `(compilation-mode-line-fail ((,class (:foreground ,jellybeans-plus-red-0))))
        `(compilation-mode-line-run ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(diredp-date-time ((,class (:foreground ,jellybeans-plus-fg))))
+       ;; Dired
        `(diredp-deletion ((,class (:foreground ,jellybeans-plus-red-0 :background ,jellybeans-plus-bg))))
        `(diredp-dir-heading ((,class (:foreground ,jellybeans-plus-yellow-0 :background ,jellybeans-plus-bg))))
        `(diredp-dir-name ((,class (:foreground ,jellybeans-plus-green-2 :background ,jellybeans-plus-bg))))
@@ -75,33 +93,25 @@
        `(diredp-symlink ((,class (:foreground ,jellybeans-plus-red-3))))
        `(diredp-write-priv ((,class (:foreground ,jellybeans-plus-fg :background ,jellybeans-plus-bg))))
        `(emmet-preview-output ((,class (:background ,jellybeans-plus-purple-1))))
+       ;; Elixir
        `(elixir-atom-face ((,class (:foreground ,jellybeans-plus-blue-0))))
        `(erc-notice-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(erc-prompt-face ((,class (:foreground ,jellybeans-plus-fg))))
        `(erc-timestamp-face ((,class (:foreground ,jellybeans-plus-purple-0))))
+       ;; Eshell
        `(eshell-prompt ((,class (:foreground ,jellybeans-plus-red-0))))
        `(eshell-ls-directory ((,class (:weight normal :foreground ,jellybeans-plus-green-2))))
        `(eshell-ls-executable ((,class (:weight normal :foreground ,jellybeans-plus-red-0))))
        `(eshell-ls-product ((,class (:foreground ,jellybeans-plus-fg))))
        `(eshell-ls-symlink ((,class (:weight normal :foreground ,jellybeans-plus-purple-2))))
-       `(font-lock-builtin-face ((,class (:foreground ,jellybeans-plus-blue-0))))
-       `(font-lock-comment-face ((,class (:slant normal :foreground ,jellybeans-plus-grey-0))))
-       `(font-lock-constant-face ((,class (:foreground ,jellybeans-plus-green-1))))
-       `(font-lock-doc-face ((,class (:foreground ,jellybeans-plus-green-0))))
-       `(font-lock-function-name-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
-       `(font-lock-keyword-face ((,class (:foreground ,jellybeans-plus-purple-0))))
-       `(font-lock-preprocessor-face ((,class (:foreground ,jellybeans-plus-hspragma))))
-       `(font-lock-string-face ((,class (:foreground ,jellybeans-plus-green-0))))
-       `(font-lock-type-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
-       `(font-lock-variable-name-face ((,class (:foreground ,jellybeans-plus-cyan)))) ;; hs operators color
-       `(font-lock-warning-face ((,class (:foreground ,jellybeans-plus-red-1))))
-       `(font-lock-regexp-grouping-construct ((t (:foreground ,jellybeans-plus-yellow-0 :bold t))))
-       `(font-lock-regexp-grouping-backslash ((t (:foreground ,jellybeans-plus-red-0 :bold t))))
+
        `(fringe ((,class (:foreground ,jellybeans-plus-grey-5 :background ,jellybeans-plus-bg))))
+       ;; Git
        `(git-commit-comment-file ((,class (:foreground ,jellybeans-plus-fg))))
        `(git-commit-comment-heading ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(git-commit-summary ((,class (:foreground ,jellybeans-plus-fg))))
        `(header-line ((,class (:foreground ,jellybeans-plus-fg))))
+       ;; Helm
        `(helm-buffer-file ((,class (:foreground ,jellybeans-plus-fg))))
        `(helm-buffer-process ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(helm-buffer-size ((,class (:foreground ,jellybeans-plus-fg))))
@@ -117,6 +127,7 @@
        `(helm-source-header ((,class (:foreground ,jellybeans-plus-yellow-0 :background ,jellybeans-plus-grey-3))))
        `(helm-swoop-target-line-face ((,class (:foreground ,jellybeans-plus-fg :background ,jellybeans-plus-grey-4))))
        `(helm-swoop-target-word-face ((,class (:foreground ,jellybeans-plus-red-1))))
+
        `(hl-line ((,class (:background ,jellybeans-plus-grey-3))))
        `(isearch ((,class (:foreground ,jellybeans-plus-fg :background ,jellybeans-plus-red-1))))
        `(isearch-fail ((,class (:background ,jellybeans-plus-red-1))))
@@ -126,6 +137,7 @@
        `(ido-virtual ((,class (:foreground ,jellybeans-plus-purple-0))))
        `(lazy-highlight ((,class (:foreground ,jellybeans-plus-red-1 :background nil))))
        `(linum ((,class (:slant normal :foreground ,jellybeans-plus-grey-6))))
+       ;; Magit
        `(magit-blame-heading ((,class (:foreground ,jellybeans-plus-grey-1 :background ,jellybeans-plus-grey-2))))
        `(magit-branch-local ((,class (:foreground ,jellybeans-plus-green-2))))
        `(magit-branch-remote ((,class (:foreground ,jellybeans-plus-green-2))))
@@ -149,6 +161,7 @@
        `(minibuffer-prompt ((,class (:foreground ,jellybeans-plus-fg))))
        `(mode-line ((,class (:foreground ,jellybeans-plus-fg :background nil))))
        `(mode-line-inactive ((,class (:foreground ,jellybeans-plus-grey-4 :background nil))))
+       ;; Org
        `(org-checkbox ((,class (:foreground ,jellybeans-plus-green-0))))
        `(org-date ((,class (:foreground ,jellybeans-plus-purple-0))))
        `(org-done ((,class (:foreground ,jellybeans-plus-green-0))))
@@ -159,8 +172,12 @@
        `(org-special-keyword ((,class (:foreground ,jellybeans-plus-purple-0))))
        `(org-todo ((,class (:foreground ,jellybeans-plus-yellow-0))))
        `(region ((,class (:background ,jellybeans-plus-purple-1))))
+       ;; Rails
+       `(projectile-rails-keyword-face ((,class (:foreground ,jellybeans-plus-yellow-0))))
+       ;; Ruby
        `(ruby-constant-face ((,class (:foreground ,jellybeans-plus-red-0))))
        `(ruby-symbol-face ((,class (:foreground ,jellybeans-plus-blue-1))))
+
        `(shm-current-face ((,class (:background ,jellybeans-plus-grey-4))))
        `(shm-quarantine-face ((,class (:background ,jellybeans-plus-green-3))))
        `(smerge-markers ((,class (:foreground ,jellybeans-plus-yellow-0 :background ,jellybeans-plus-grey-2))))
@@ -168,6 +185,7 @@
        `(sp-pair-overlay-face ((,class (:background ,jellybeans-plus-grey-4))))
        `(sp-show-pair-match-face ((,class (:background ,jellybeans-plus-grey-5))))
        `(trailing-whitespace ((,class (:background ,jellybeans-plus-red-4))))
+       ;; Web Mode
        `(web-mode-builtin-face ((,class (:foreground ,jellybeans-plus-blue-0))))
        `(web-mode-html-attr-name-face ((,class (:foreground ,jellybeans-plus-purple-0))))
        `(web-mode-html-tag-face ((,class (:foreground ,jellybeans-plus-fg))))
