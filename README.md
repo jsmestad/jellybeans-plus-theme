@@ -18,7 +18,7 @@ dotspacemacs-themes '(jellybeans-plus)
 
 ## Preview
 
-This is using [spacemacs]() with [all-the-icons]() enabled.
+This preview was taken using [spacemacs](http://spacemacs.org) with [all-the-icons.el](https://github.com/domtronn/all-the-icons.el) enabled.
 
 ![jellybeans spacemacs](https://github.com/jsmestad/jellybeans-plus-theme/raw/master/screenshot.png)
 
